@@ -7,6 +7,7 @@
   <meta name="viewpoint" content="width=device-width, intial-scale=1.0">
   <title> Personal Portfolio Website </title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/80af900ef9.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -17,8 +18,7 @@
         <ul>
           <li><a href="#">Home</a></li>
           <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Services and Portfolio</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
       </nav>
@@ -84,22 +84,76 @@
       </div>
     </div>
   </div>
+  <!---------------------Services section code------------------------->
 
-  <script>
-    var tablinks = document.getElementsByClassName("tab-links");
-    var tabcontents = document.getElementsByClassName("tab-contents");
+  <div id="services">
+    <div class="container">
+      <h1 class="sub-title">Services and Portfolio</h1>
+      <div class="services-list">
+        <div>
+          <i class="fa-solid fa-person-walking-with-cane"></i>
+          <h2>AI-Enabled Smart Blind Stick</h2>
+          <p2> My project is a design of a
+            smart stick equipped with IR and ultrasonic sensors to detect any obstacles in front of the user, within a
+            range of four meters. PIR sensor is used to detect living entities in the surrounding. It has been Granted
+            Copyright By Government Of India.</p2>
+          <br>
+          <a href="#">Learn More </a>
+        </div>
+        <div>
+          <i class="fa-solid fa-code"></i>
+          <h2>Personal Portfolio Website</h2>
+          <p2> Created Portfolio Website using HTML, CSS and JavaScript.</p2><br>
+          <a href="#">Learn More </a>
+        </div>
+        <div>
+          <i class="fa-solid fa-location-dot"></i>
+          <h2>Suraksha: Personal Asset Tracker</h2>
+          <p2> Developed an frontend for IoT based device which tracks and secures personal properties/things.</p2>
+          <a href="#">Learn More </a>
+        </div>
+      </div>
+    </div>
+    <!---------------------Contact section code------------------------->
+    <div id="contact">
+      <div class="conatiner">
+        <div class="row">
+          <div class="contact-left"></div>
+          <h1 class="sub-title">Contact Me</h1>
+          <p><i class="fa-solid fa-paper-plane"></i>sidbnjadhav@gmail.com</p>
+          <p><i class="fa-solid fa-phone"></i>Ph No. +91 8010099787</p>
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/in/siddhantjadhavsj"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/Sid-0602"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.hackerrank.com/sid_Jadhav_0602"><i class="fa-brands fa-hackerrank"></i></a>
+          </div>
+          <a href="Siddhant Jadhav_Resume.pdf" download class="btn btn2">Download CV</a>
+          <div class="contact-right"></div>
+          <form>
+            <input type="text" name="Name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+            <button type="submit" class="btn btn2">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
 
-    function opentab(tabname) {
-      for (tablink of tablinks) {
-        tablink.classList.remove("active-link");
+    <script>
+      var tablinks = document.getElementsByClassName("tab-links");
+      var tabcontents = document.getElementsByClassName("tab-contents");
+
+      function opentab(tabname) {
+        for (tablink of tablinks) {
+          tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents) {
+          tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
       }
-      for (tabcontent of tabcontents) {
-        tabcontent.classList.remove("active-tab");
-      }
-      event.currentTarget.classList.add("active-link");
-      document.getElementById(tabname).classList.add("active-tab");
-    }
-  </script>
+    </script>
 </body>
 
 </html>
