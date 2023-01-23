@@ -50,14 +50,56 @@
             seeking opportunities to work and explore more.</br></p>
 
           <div class="tab-titles">
-            <p class="tab-links active-link">Skills</p>
-            <p class="tab-links">Experience</p>
-            <p class="tab-links">Education</p>
+            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+            <p class="tab-links" onclick="opentab('experience')">Experience</p>
+            <p class="tab-links" onclick="opentab('education')">Education</p>
+          </div>
+          <div class="tab-contents active-tab" id="skills">
+            <ul>
+              <li><span>C/C++</span><br>Data Structure and Algorithms</li>
+              <li><span>Web Devlopment</span><br>HTML,CSS,JS</li>
+              <li><span>Database Languages</span><br>SQL and MongoDB</li>
+              <li><span>Git and Github</span></li>
+              <li><span>Data Science</span> <br>Python and Tableau</li>
+              <li><span>Operating Systems and Computer Networks</span></li>
+              <li><span>Mathematics and Statistics for Data Science</span></li>
+            </ul>
+          </div>
+          <div class="tab-contents" id="experience">
+            <ul>
+              <li><span>Jul 2021 - Aug 2021</span><br>Summer Research Intern at VIIT-Pune. </li>
+              <li><span>Aug 2021 - Mar 2022</span><br> Technical Activity Incharge at GFG-VIIT</li>
+            </ul>
+          </div>
+          <div class="tab-contents" id="education">
+            <ul>
+              <li><span>2020-24: Bachelor of Technology (BTech)</span><br>Computer Science- VIIT,Pune</li>
+              <li><span>2021-25: Bachelor of Sciences (BS)</span><br>Data Science and Application- IIT Madras (Distance
+                Learning)</li>
+              <li><span>2018-20: HSC</span><br>FIITJEE Junior College, Hyderabad</li>
+
+            </ul>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  <script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname) {
+      for (tablink of tablinks) {
+        tablink.classList.remove("active-link");
+      }
+      for (tabcontent of tabcontents) {
+        tabcontent.classList.remove("active-tab");
+      }
+      event.currentTarget.classList.add("active-link");
+      document.getElementById(tabname).classList.add("active-tab");
+    }
+  </script>
 </body>
 
 </html>
