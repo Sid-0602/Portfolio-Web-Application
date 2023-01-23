@@ -139,6 +139,26 @@ nav ul li a::after{
   transition: 0.5s;
 }
 
-.tab-links.active-link{
-   
+.tab-links.active-link::after{
+   width: 50%;
+}
+
+.tab-contents ul li{
+  list-style: none;
+  margin: 10px 0;
+
+}
+
+.tab-contents ul li span{
+  color: #AA6C39;
+  font-size: 20px;
+}
+
+.tab-contents{
+  display: none;
+  
+}
+
+.tab-contents.active-tab{
+  display: block;
 }
