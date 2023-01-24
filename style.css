@@ -222,7 +222,7 @@ nav ul li a::after{
   padding: 14px 50px;
   border-radius: 6px;
   text-decoration: none;
-  color: #fff;
+  color: black;
   transition: background 0.5s;
 }
 
