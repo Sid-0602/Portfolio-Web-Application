@@ -7,6 +7,7 @@
   <meta name="viewpoint" content="width=device-width, intial-scale=1.0">
   <title> Personal Portfolio Website </title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/80af900ef9.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -14,13 +15,15 @@
     <div class="container">
       <nav>
         <img src="logo.jpeg" class="logo">
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Portfolio</a></li>
-          <li><a href="#">Contact</a></li>
+        <ul id="sidemenu">
+          <li><a href="#header">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Projects & Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <i class="fa-solid fa-circle-xmark" onclick="closemenu()"></i>
         </ul>
+
+        <i class="fa-solid fa-bars" onclick="openmenu()"></i>
       </nav>
       <div class="header-text">
         <p> Software Developer || Data enthusiast </p>
@@ -84,22 +87,107 @@
       </div>
     </div>
   </div>
+  <!---------------------Services section code------------------------->
 
-  <script>
-    var tablinks = document.getElementsByClassName("tab-links");
-    var tabcontents = document.getElementsByClassName("tab-contents");
+  <div id="services">
+    <div class="container">
+      <h1 class="sub-title">Projects & Services</h1>
+      <div class="services-list">
+        <div>
+          <i class="fa-solid fa-person-walking-with-cane"></i>
+          <h2>AI-Enabled Smart Blind Stick</h2>
+          <p2> My project is a design of a
+            smart stick equipped with IR and ultrasonic sensors to detect any obstacles in front of the user, within a
+            range of four meters. PIR sensor is used to detect living entities in the surrounding. It has been Granted
+            Copyright By Government Of India.</p2>
+          <br>
+          <a href="#">Learn More </a>
+        </div>
+        <div>
+          <i class="fa-solid fa-code"></i>
+          <h2>Personal Portfolio Website</h2>
+          <p2> Created Portfolio Website using HTML, CSS and JavaScript.</p2><br>
+          <a href="#">Learn More </a>
+        </div>
+        <div>
+          <i class="fa-solid fa-location-dot"></i>
+          <h2>Suraksha: Personal Asset Tracker</h2>
+          <p2> Developed an frontend for IoT based device which tracks and secures personal properties/things.</p2>
+          <a href="#">Learn More </a>
+        </div>
+      </div>
+    </div>
+    <!---------------------Contact section code------------------------->
+    <div id="contact">
+      <div class="container">
+        <div class="row">
+          <!-- LEFT CONTENT -->
+          <div class="contact-left">
+            <h1 class="sub-title">Contact Me</h1>
+            <p><i class="fa-solid fa-paper-plane"></i>sidbnjadhav@gmail.com</p>
+            <p><i class="fa-solid fa-phone"></i>Ph No. +91 8010099787</p>
+            <div class="social-icons">
+              <a href="https://www.linkedin.com/in/siddhantjadhavsj"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="https://github.com/Sid-0602"><i class="fa-brands fa-github"></i></a>
+              <a href="https://www.hackerrank.com/sid_Jadhav_0602"><i class="fa-brands fa-hackerrank"></i></a>
+            </div>
+            <a href="Siddhant Jadhav_Resume.pdf" download class="btn btn2"> Download Resume </a>
+          </div>
+          <!-- RIGHT CONTENT -->
 
-    function opentab(tabname) {
-      for (tablink of tablinks) {
-        tablink.classList.remove("active-link");
+          <div class="contact-right">
+            <form name="submit-to-google-sheet">
+              <input type="text" name="Name" placeholder="Your Name" required>
+              <input type="email" name="Email" placeholder="Your Email-Id" required>
+              <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+              <button type="Submit" class="btn btn2">Submit</button>
+            </form>
+
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p> Copyright © Siddhant Jadhav, Made with Replit IDE </p>
+      </div>
+    </div>
+
+    <script>
+      var tablinks = document.getElementsByClassName("tab-links");
+      var tabcontents = document.getElementsByClassName("tab-contents");
+
+      function opentab(tabname) {
+        for (tablink of tablinks) {
+          tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents) {
+          tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
       }
-      for (tabcontent of tabcontents) {
-        tabcontent.classList.remove("active-tab");
+    </script>
+
+    <script>
+      var sidemenu = document.getElementById("sidemenu")
+
+      function openmenu() {
+        sidemenu.style.right = "0";
       }
-      event.currentTarget.classList.add("active-link");
-      document.getElementById(tabname).classList.add("active-tab");
-    }
-  </script>
+      function closemenu() {
+        sidemenu.style.right = "-200px";
+      }
+    </script>
+    <script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzMtjbHF9N3e922EZcwCq8vcWDDgSNbULPEFzO-U_bR_NMKEqBOyzRWNyg-0l-9w1ei/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
 </body>
 
 </html>
