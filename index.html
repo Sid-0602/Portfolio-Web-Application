@@ -140,7 +140,7 @@
               <input type="text" name="Name" placeholder="Your Name" required>
               <input type="email" name="Email" placeholder="Your Email-Id" required>
               <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-              <button type="Submit" class="btn btn2">Submit</button>
+              <button type="Submit" class="btn">Submit</button>
             </form>
 
           </div>
@@ -178,16 +178,16 @@
       }
     </script>
     <script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbzMtjbHF9N3e922EZcwCq8vcWDDgSNbULPEFzO-U_bR_NMKEqBOyzRWNyg-0l-9w1ei/exec'
-  const form = document.forms['submit-to-google-sheet']
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbzMtjbHF9N3e922EZcwCq8vcWDDgSNbULPEFzO-U_bR_NMKEqBOyzRWNyg-0l-9w1ei/exec'
+      const form = document.forms['submit-to-google-sheet']
 
-  form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => console.log('Success!', response))
-      .catch(error => console.error('Error!', error.message))
-  })
-</script>
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, {method: 'POST', body: new FormData(form)})
+          .then(response => console.log('Success!', response))
+          .catch(error => console.error('Error!', error.message))
+      })
+    </script>
 </body>
 
 </html>
